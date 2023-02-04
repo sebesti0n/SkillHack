@@ -3,10 +3,6 @@ package com.example.skillhack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
-import android.view.Window
-import android.view.WindowInsetsController
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -27,9 +23,11 @@ class MainActivity : AppCompatActivity() {
         head.alpha=0f
         typerfunc()
         head.animate().setDuration(3001).alpha(1f).withEndAction {
-            val i = Intent(this, tell_ur_name::class.java)
-            startActivity(i)
+            val i = Intent(this, Login::class.java)
+
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(i)
+
             finish()
         }
 
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.start()
-        // SPLASH SCREEN CODE END
+
 
 
 
