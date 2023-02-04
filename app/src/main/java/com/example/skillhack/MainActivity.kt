@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val head=findViewById<TextView>(R.id.heading)
         head.alpha=0f
         typerfunc()
-        head.animate().setDuration(3000).alpha(1f).withEndAction {
+        head.animate().setDuration(3001).alpha(1f).withEndAction {
             val i = Intent(this, tell_ur_name::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
