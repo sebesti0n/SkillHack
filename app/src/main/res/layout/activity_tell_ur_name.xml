@@ -9,7 +9,6 @@
     android:background="@drawable/backscreen_theme">
 
     <LinearLayout
-        android:background="@drawable/rectangle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5">
@@ -30,12 +29,10 @@
 
         <ImageView
             android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:layout_marginTop="50dp"
-            android:background="@drawable/circle"
-            android:layout_marginRight="135dp"
-            android:layout_marginLeft="135dp"
-            android:layout_width="wrap_content"
-            android:layout_height="139dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/login_person" />
     </LinearLayout>
@@ -106,7 +103,7 @@
             android:layout_marginLeft="80dp"
             android:layout_weight="1"
             android:background="@drawable/custom_button"
-
+            android:fontFamily="@font/baloo_bhaijaan"
             android:text="Continue" />
 
 </LinearLayout>
