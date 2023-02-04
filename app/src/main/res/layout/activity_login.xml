@@ -33,22 +33,24 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:gravity="center"
+            android:background="@drawable/otp_box"
             android:orientation="horizontal"
             >
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:text="+91"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:textStyle="bold"
                 />
             <EditText
+                android:id="@+id/input_Mob_Num"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
 
                 android:background="@null"
-                android:hint="  Mobile Number"
+                android:hint="@string/mobile_number"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:textSize="16sp"
@@ -57,6 +59,7 @@
 
         </LinearLayout>
         <Button
+            android:id="@+id/btnGetOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
