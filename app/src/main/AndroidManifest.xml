@@ -18,10 +18,12 @@
             android:exported="false" />
         <activity
             android:name=".VerificationOTP"
-            android:exported="false" />
+            android:exported="true" />
+        <activity android:name=".tell_ur_name"
+            android:exported="true"/>
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
