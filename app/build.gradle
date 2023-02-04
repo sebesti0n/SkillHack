@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.skillhack"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -33,11 +33,25 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    def htextview_version = "0.1.6"
+// as 3.0 use implementation
+    implementation "com.hanks:htextview-base:$htextview_version"        // base library
+
+    implementation "com.hanks:htextview-fade:$htextview_version"        // optional
+    implementation "com.hanks:htextview-line:$htextview_version"        // optional
+    implementation "com.hanks:htextview-rainbow:$htextview_version"     // optional
+    implementation "com.hanks:htextview-typer:$htextview_version"       // optional
+
+    implementation "com.hanks:htextview-scale:$htextview_version"       // optional
+    implementation "com.hanks:htextview-evaporate:$htextview_version"   // optional
+    implementation "com.hanks:htextview-fall:$htextview_version"        // optional
 }
