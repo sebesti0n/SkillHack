@@ -1,4 +1,4 @@
-#                                                  SkillHack Product Requirement Document
+#                                                  Skill Hack
 ## Overview
 
 This online app allows users to search for problems based on their skills. Users can select the

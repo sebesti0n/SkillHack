@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //SPLASH SCREEN CODE STARTS
+
         supportActionBar?.hide()
         val x=WindowCompat.getInsetsController(window,window.decorView)
         x.systemBarsBehavior=WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE
@@ -46,6 +49,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.start()
+        // SPLASH SCREEN CODE END
+
+
+
+
     }
 }
 

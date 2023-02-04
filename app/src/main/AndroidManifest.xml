@@ -14,12 +14,8 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".tell_ur_name"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:name=".VerificationOTP"
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
