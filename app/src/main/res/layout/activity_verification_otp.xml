@@ -8,31 +8,49 @@
     tools:context=".VerificationOTP">
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/headings"
+                android:layout_height="wrap_content"
+                android:text="SkillHack"
+                />
+
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:text="@string/otp_verification"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            />
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/MessageOnVerificationOTPPage"
-            android:layout_width="wrap_content"
+            android:layout_width="353dp"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:text="@string/insert_an_otp_sent_on_your_mobile_number_91_xxxxxxxxxx"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:gravity="center"
+            android:text="@string/insert_an_otp_sent_on_your_mobile_number_91_xxxxxxxxxx"
             android:textSize="15sp"
-            android:textStyle="bold"
             />
 
+
     <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
@@ -166,19 +184,22 @@
 
     </LinearLayout>
         <LinearLayout
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/didn_t_receive_the_otp"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:textSize="14sp"
 
             />
             <TextView
                 android:id="@+id/tv_resendotp"
+                android:fontFamily="@font/baloo_bhaijaan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -189,13 +210,15 @@
         </LinearLayout>
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnverify"
         android:layout_width="wrap_content"
-
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:background="@drawable/custom_button"
+        android:paddingBottom="1dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
         android:layout_height="wrap_content"
-
+        android:fontFamily="@font/baloo_bhaijaan"
         android:text="@string/verify"/>
     </LinearLayout>
 

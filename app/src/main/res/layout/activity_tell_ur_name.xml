@@ -9,32 +9,85 @@
     android:background="@drawable/backscreen_theme">
 
     <LinearLayout
+        android:background="@drawable/rectangle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1.5">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/headings"
+            android:layout_height="wrap_content"
+            android:text="SkillHack"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
+        android:layout_weight="1.1">
 
-        >
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/circle"
+            android:layout_marginRight="135dp"
+            android:layout_marginLeft="135dp"
+            android:layout_width="wrap_content"
+            android:layout_height="139dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/login_person" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/enterdob"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/box"
+            android:fontFamily="@font/baloo_bhaijaan"
+            android:ems="12"
+            android:hint="Enter your name"
+            android:inputType="textPersonName" />
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
+            android:padding="8dp"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/box"
             android:ems="12"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Enter your Date of Birth"
+            android:inputType="textPersonName" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView3"-->
+<!--            android:padding="8dp"-->
+<!--            android:textSize="15sp"-->
+<!--            android:background="@drawable/box"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginRight="50dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Enter Your Date of Birth" />-->
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
+
     </LinearLayout>
 
 
@@ -54,7 +107,7 @@
             android:layout_weight="1"
             android:background="@drawable/custom_button"
 
-            android:text="Button" />
+            android:text="Continue" />
 
 </LinearLayout>
 </LinearLayout>
