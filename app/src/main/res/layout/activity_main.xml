@@ -19,7 +19,7 @@
         android:layout_weight="1"
         android:fontFamily="serif"
         android:gravity="bottom"
-        android:text="Skill hacks"
+        android:text="Skillhack"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="40sp" />
 
