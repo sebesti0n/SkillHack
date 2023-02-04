@@ -7,29 +7,37 @@
     android:background="@drawable/backscreen_theme"
     tools:context=".MainActivity"
     android:gravity="center"
+
     >
+
 
     <TextView
         android:id="@+id/heading"
-        android:layout_width="343dp"
-        android:layout_height="281dp"
-        android:scaleX="3"
-        android:scaleY="3"
-        android:text="SkillHacks" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="serif"
+        android:gravity="bottom"
+        android:text="Skill hacks"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="40sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/splash1"
-            android:layout_width="460dp"
-            android:layout_height="229dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
             android:text="@string/sc1"
             android:textAlignment="center"
             android:textColor="#000000" />
+
     </LinearLayout>
 
 </LinearLayout>
