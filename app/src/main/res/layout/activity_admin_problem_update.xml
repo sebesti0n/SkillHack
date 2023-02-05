@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/heading_backscreen"
-
         >
 
         <ImageView
@@ -33,55 +32,109 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome admin"/>
+            android:layout_marginLeft="10dp"
+            android:textSize="40sp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/baloo_bhaijaan"
+            android:text="Welcome admin!!"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:text="Update a Challenge for Users"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/short_discription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/box"
             android:ems="10"
+            android:hint="Enter question desciption in one  line"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textColorHint="#B29B88" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/required_skill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/box"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine" />
+            android:hint="Enter detailed discription of question"
+            android:inputType="textMultiLine"
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textColorHint="#B29B88" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/skills_required"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/box"
             android:ems="10"
+            android:hint="Skill required"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textColorHint="@color/hint_color" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/reward_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/box"
             android:ems="10"
-            android:inputType="number" />
+            android:hint="Reward Amount"
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textColorHint="#B29B88" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/review_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/box"
             android:ems="10"
-            android:inputType="date" />
+            android:hint="Enter last date of submission"
+            android:inputType="date"
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textColorHint="#B29B88" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/submit_button"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/base"
+            android:background="@drawable/custom_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginRight="90dp"
+            android:layout_marginLeft="90dp"
+            android:text="Submit" />
 
 
     </LinearLayout>

@@ -7,6 +7,7 @@
     android:padding="16dp"
     android:background="@drawable/background_light"
     tools:context=".Problem_List">
+
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recylerview"
     android:layout_width="0dp"

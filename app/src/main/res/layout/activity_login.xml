@@ -11,27 +11,47 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heading_backscreen"
+            >
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/main_logo" />
+
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Skill Hack"
-            android:textSize="25sp"
+            android:layout_marginTop="30dp"
+            android:text="Login/Signup"
+            android:fontFamily="@font/baloo_bhaijaan"
+            android:textSize="35sp"
             android:textStyle="bold"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
+            android:layout_marginTop="100dp"
             android:text="Login Via your Moobile number to start hacking skill."
             android:gravity="center"
+            android:fontFamily="@font/baloo_bhaijaan"
             android:textSize="15sp"
-            android:textStyle="bold"
+
             />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="60dp"
             android:gravity="center"
             android:background="@drawable/otp_box"
             android:orientation="horizontal"
@@ -39,7 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="+91"
+                android:text="+91-"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -51,6 +71,7 @@
 
                 android:background="@null"
                 android:hint="@string/mobile_number"
+                android:textColorHint="@color/hint_color"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:textSize="16sp"
@@ -63,11 +84,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <Button
+
             android:id="@+id/btnGetOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginHorizontal="70dp"
             android:text="get OTP"
+            android:textColor="@color/base"
             android:background="@drawable/custom_button"
             android:textStyle="bold"
             />
