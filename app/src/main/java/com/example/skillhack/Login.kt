@@ -58,7 +58,8 @@ class Login : AppCompatActivity() {
                 else{
                     Toast.makeText(this,"Please enter correct number",Toast.LENGTH_LONG).show()
                 }
-            }else{
+            }
+            else{
                 Toast.makeText(this,"Enter Mobile number",Toast.LENGTH_SHORT).show()
             }
 
