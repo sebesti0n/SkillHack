@@ -8,18 +8,21 @@ android:layout_height="match_parent"
 android:orientation="vertical"
 android:background="@drawable/background_light">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1.5">
-    <TextView
-        android:layout_width="wrap_content"
-        style="@style/headings"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SkillHack"
-        />
+        android:background="@drawable/heading_backscreen">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/main_logo" />
+
+    </LinearLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -102,6 +105,7 @@ android:background="@drawable/background_light">
         android:layout_marginRight="80dp"
         android:layout_marginLeft="80dp"
         android:layout_weight="1"
+        android:textColor="@color/base"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/baloo_bhaijaan"
         android:text="Continue" />

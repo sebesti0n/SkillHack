@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backscreen_theme"
+    android:background="@drawable/background_light"
     tools:context=".MainActivity"
     android:gravity="center">
 
@@ -13,7 +13,7 @@
         android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/main_logo" />
+        android:src="@drawable/main_logo_2" />
 
     <TextView
         android:id="@+id/heading"
@@ -23,13 +23,10 @@
 
         android:fontFamily="@font/baloo_bhaijaan"
         android:gravity="bottom"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="4"
-        android:shadowRadius="1"
-        android:text="Skillhack"
+        android:shadowColor="@color/white"
+        android:text="SkillHack"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#B4A9DF"
+        android:textColor="#551E19"
         android:textSize="40sp" />
 
 
@@ -44,12 +41,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo_bhaijaan"
             android:shadowColor="#000000"
-            android:shadowDx="1"
-            android:shadowDy="3"
-            android:shadowRadius="1"
             android:text="@string/sc1"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:textColor="#734743" />
 
     </LinearLayout>
 

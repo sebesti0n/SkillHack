@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/heading_backscreen"
-        android:outlineAmbientShadowColor="@color/black"
-        android:outlineSpotShadowColor="@color/black"
 
         android:layout_weight="1.5">
 
@@ -25,4 +23,5 @@
             android:src="@drawable/main_logo" />
 
     </LinearLayout>
+
 </LinearLayout>
