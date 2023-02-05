@@ -58,6 +58,10 @@
                 />
 
         </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnGetOtp"
             android:layout_width="match_parent"
@@ -66,6 +70,15 @@
             android:text="get OTP"
             android:textStyle="bold"
             />
+            <ProgressBar
+                android:id="@+id/PB_otp_sending"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
+
+        </FrameLayout>
     </LinearLayout>
 
 </ScrollView>

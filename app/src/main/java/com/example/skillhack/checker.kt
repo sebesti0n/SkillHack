@@ -3,9 +3,9 @@ package com.example.skillhack
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class tell_ur_name : AppCompatActivity() {
+class checker : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tell_ur_name)
+        setContentView(R.layout.activity_checker)
     }
 }
