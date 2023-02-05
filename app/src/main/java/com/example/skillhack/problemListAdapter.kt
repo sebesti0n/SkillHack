@@ -6,32 +6,39 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class problemListAdapter(private val probs:ArrayList<String>, private val listner:problemItemClicked): RecyclerView.Adapter<probsViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): probsViewHolder {
-      val view=LayoutInflater.from(parent.context).inflate(R.layout.itemproblem,parent,false)
-        val viewHolder =probsViewHolder(view)
-        view.setOnClickListener{
-listner.onItemClicked(probs[viewHolder.adapterPosition])
-        }
+class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
+
+    class problemListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val probView:TextView=itemView.findViewById(R.id.prob)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): problemListViewHolder {
+      val view=LayoutInflater
+          .from(parent.context)
+          .inflate(R.layout.itemproblem,parent,false)
+
+//            view.accessibilityDelegate= Accessibility
+
+        val viewHolder =problemListViewHolder(view)
+
 
         return viewHolder
     }
 
     override fun getItemCount(): Int {
-        return probs.size
+        return list.size
     }
 
-    override fun onBindViewHolder(holder: probsViewHolder, position: Int) {
-        val currProb=probs[position]
+    override fun onBindViewHolder(holder: problemListViewHolder, position: Int) {
+        val currProb=list[position]
         holder.probView.text=currProb
+        //onclicklistener
     }
 
 }
-class probsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
- val probView:TextView=itemView.findViewById(R.id.prob)
-}
 
 
-interface problemItemClicked{
-    fun onItemClicked(item:String)
-}
+
+//interface problemItemClicked{
+//    fun onItemClicked(item:String)
+//}
