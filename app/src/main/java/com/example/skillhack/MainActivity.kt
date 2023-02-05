@@ -3,6 +3,11 @@ package com.example.skillhack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.view.Window
+import android.view.WindowInsetsController
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -20,14 +25,15 @@ class MainActivity : AppCompatActivity() {
         x.systemBarsBehavior=WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE
         //requestWindowFeature(Window.FEATURE_NO_TITLEZ
         val head=findViewById<TextView>(R.id.heading)
+        val logo=findViewById<ImageView>(R.id.logo)
         head.alpha=0f
+        logo.alpha=0f
+        logo.animate().setDuration(3000).alpha(1f)
         typerfunc()
         head.animate().setDuration(3001).alpha(1f).withEndAction {
-            val i = Intent(this, Login::class.java)
-
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            val i = Intent(this, tell_ur_name::class.java)
             startActivity(i)
-
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
 
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.start()
-
+        // SPLASH SCREEN CODE END
 
 
 
