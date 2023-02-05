@@ -22,21 +22,28 @@ class Login : AppCompatActivity() {
     private var getotpbtn:Button?=null
     private lateinit var auth:FirebaseAuth
     private lateinit var mobilenumber:String
-    var progressbar:ProgressBar=findViewById(R.id.PB_otp_sending)
+   private lateinit var progressbar:ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_login)
         enternumber=findViewById(R.id.input_Mob_Num)
         getotpbtn=findViewById(R.id.btnGetOtp)
-
+        progressbar=findViewById(R.id.PB_otp_sending)
         progressbar.visibility=View.INVISIBLE
         auth=FirebaseAuth.getInstance()
+
+
         getotpbtn?.setOnClickListener {
+
+            Log.d("TAG","get otp btn starts")
             mobilenumber=enternumber?.text?.trim().toString()
             if(!mobilenumber.isEmpty()){
                 if((mobilenumber).length==10){
                         mobilenumber = "+91$mobilenumber"
-
+                    progressbar.visibility=View.VISIBLE
+                    Log.d("TAG","OTP generating")
                     val options = PhoneAuthOptions.newBuilder(auth)
                         .setPhoneNumber(mobilenumber)
                         .setTimeout(60L, TimeUnit.SECONDS)
@@ -44,7 +51,7 @@ class Login : AppCompatActivity() {
                         .setCallbacks(callbacks)
                         .build()
                     PhoneAuthProvider.verifyPhoneNumber(options)
-
+                    Log.d("TAG","OTP generated")
 //
 //                    finish()
                 }
@@ -62,13 +69,13 @@ class Login : AppCompatActivity() {
    private val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-            Log.d(TAG, "onVerificationCompleted:$credential")
             signInWithPhoneAuthCredential(credential)
+            Log.d("TAG","CallBank function 1")
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
-
-            Log.w(TAG, "onVerificationFailed", e)
+            Log.d("TAG","CallBank function 2")
+          //  Log.w(TAG, "onVerificationFailed", e)
 
             if (e is FirebaseAuthInvalidCredentialsException) {
                 Log.d("TAG","onVerificationFailed :${e.toString()}")
@@ -76,39 +83,38 @@ class Login : AppCompatActivity() {
             } else if (e is FirebaseTooManyRequestsException) {
                 Log.d("TAG","onVerificationFailed :${e.toString()}")
             }
-            progressbar.visibility=View.VISIBLE
+          //  progressbar.visibility=View.VISIBLE
         }
 
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
-        ) {
+        ) {Log.d("TAG","CallBank function 3  Shift to verification page")
+                       val intent=Intent(this@Login,checker::class.java)
+//                        intent.putExtra("OTP",verificationId)
+//                        intent.putExtra("resendtoken",token)
+//                        intent.putExtra("mobile_Number",mobilenumber)
+            Log.d("TAG","CallBank function 3  Shifting to verification page ${token.toString()}")
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                        startActivity(intent)
 
-
-                    val intent=Intent(this@Login,VerificationOTP::class.java)
-            intent.putExtra("OTP",verificationId)
-            intent.putExtra("resendtoken",token)
-                    intent.putExtra("mobile_Number",mobilenumber)
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                    startActivity(intent)
-
-                    finish()
+//                    finish()
             progressbar.visibility=View.INVISIBLE
         }
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-
+        Log.d("TAG","CallBank function 1 signInWithPhoneAuthCredential")
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this,"Authenticated Successfully",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Authenticated Successfully",Toast.LENGTH_SHORT).show()
 
                     sendToProfile()
 
                 } else {
 
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Log.d("TAG", "signInWithPhoneAuthCredential: ${task.exception.toString()}")
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
 
                     }

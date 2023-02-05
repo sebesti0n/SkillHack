@@ -43,6 +43,7 @@ class VerificationOTP : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verification_otp)
+        Log.d("TAG","verification page start")
         verifyotpbtn=findViewById(R.id.btnverify)
         inOTP1=findViewById(R.id.inputotp1)
         inOTP2=findViewById(R.id.inputotp2)
@@ -54,25 +55,25 @@ class VerificationOTP : AppCompatActivity() {
         resendToken= intent.getParcelableExtra("resendtoken", PhoneAuthProvider.ForceResendingToken::class.java)!!
 
         phonenumber=intent.getStringExtra("mobile_number")!!
-        progressBar=findViewById(R.id.PB_verifying)
+
         auth=FirebaseAuth.getInstance()
-
+//        progressBar=findViewById(R.id.PB_verifying)
         rsndotp=findViewById(R.id.tv_resendotp)
-
-//        generateotp()
+//      generateotp()
         progressBar.visibility = View.INVISIBLE
+
+        Log.d("TAG","verification page start")
         otpmovenxt()
-        resendOTPTvVisibility()
+//        resendOTPTvVisibility()
         rsndotp?.setOnClickListener {
             resendVerificationCode()
-            resendOTPTvVisibility()
+//            resendOTPTvVisibility()
         }
 
 
         verifyotpbtn?.setOnClickListener{
             //// to trim is removed in condition
-            val typedOTP =
-                (inOTP1?.text.toString() + inOTP2?.text.toString() + inOTP3?.text.toString()
+            val typedOTP = (inOTP1?.text.toString() + inOTP2?.text.toString() + inOTP3?.text.toString()
                         + inOTP4?.text.toString() + inOTP5?.text.toString() + inOTP6?.text.toString())
 
             if (typedOTP.isNotEmpty()) {
@@ -93,21 +94,21 @@ class VerificationOTP : AppCompatActivity() {
         }
 
         }
-    private fun resendOTPTvVisibility() {
-        inOTP1?.setText("")
-        inOTP2?.setText("")
-        inOTP3?.setText("")
-        inOTP4?.setText("")
-        inOTP5?.setText("")
-        inOTP6?.setText("")
-        rsndotp?.visibility = View.INVISIBLE
-        rsndotp?.isEnabled = false
-
-        Handler(Looper.myLooper()!!).postDelayed(Runnable {
-            rsndotp?.visibility = View.VISIBLE
-            rsndotp?.isEnabled = true
-        }, 60000)
-    }
+//    private fun resendOTPTvVisibility() {
+//        inOTP1?.setText("")
+//        inOTP2?.setText("")
+//        inOTP3?.setText("")
+//        inOTP4?.setText("")
+//        inOTP5?.setText("")
+//        inOTP6?.setText("")
+//        rsndotp?.visibility = View.INVISIBLE
+//        rsndotp?.isEnabled = false
+//
+//        Handler(Looper.myLooper()!!).postDelayed(Runnable {
+//            rsndotp?.visibility = View.VISIBLE
+//            rsndotp?.isEnabled = true
+//        }, 60000)
+//    }
     private fun resendVerificationCode() {
 
         val options = PhoneAuthOptions.newBuilder(auth)
@@ -128,16 +129,15 @@ class VerificationOTP : AppCompatActivity() {
 
         override fun onVerificationFailed(e: FirebaseException) {
 
+            //  Log.w(TAG, "onVerificationFailed", e)
 
             if (e is FirebaseAuthInvalidCredentialsException) {
+                Log.d("TAG","onVerificationFailed :${e.toString()}")
 
-                Log.d("TAG", "onVerificationFailed: ${e.toString()}")
             } else if (e is FirebaseTooManyRequestsException) {
-
-                Log.d("TAG", "onVerificationFailed: ${e.toString()}")
+                Log.d("TAG","onVerificationFailed :${e.toString()}")
             }
-            progressBar.visibility = View.VISIBLE
-
+            //  progressbar.visibility=View.VISIBLE
         }
 
         override fun onCodeSent(
@@ -145,14 +145,20 @@ class VerificationOTP : AppCompatActivity() {
             token: PhoneAuthProvider.ForceResendingToken
         ) {
 
+
             OTP = verificationId
             resendToken = token
+
+//
         }
     }
+
+
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    progressBar.visibility=View.VISIBLE
                     Toast.makeText(this, "Authenticate Successfully", Toast.LENGTH_SHORT).show()
                     sendToMain()
                 } else {
