@@ -18,13 +18,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.5">
-            <TextView
-                android:layout_width="wrap_content"
-                style="@style/headings"
-                android:layout_height="wrap_content"
-                android:text="SkillHack"
-                />
+            android:background="@drawable/heading_backscreen"
+            >
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/main_logo" />
+
         </LinearLayout>
 
         <TextView
@@ -212,7 +217,7 @@
         android:layout_marginTop="10dp"
         android:id="@+id/btnverify"
         android:layout_width="wrap_content"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/button_state"
         android:paddingBottom="1dp"
         android:paddingLeft="60dp"
         android:paddingRight="60dp"
