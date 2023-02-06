@@ -2,29 +2,62 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:androd="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:background="@drawable/background_light"
-
-        >
+        android:orientation="vertical"
+        android:background="@drawable/otp_box">
 
         <TextView
-            android:id="@+id/prob"
-            android:layout_width="wrap_content"
-            android:text="hello guys"
-
+            android:id="@+id/short_disc"
+            android:layout_width="match_parent"
+            android:text="short discription"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:textSize="48sp"
+            android:textSize="15sp"
             android:textColor="@color/black"
             />
+        <TextView
+            android:id="@+id/full_disc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="full discription"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:gravity="bottom"
+                android:id="@+id/skill"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="skill"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="right">
+                <TextView
+                    android:id="@+id/reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="reward"/>
+
+                <TextView
+                    android:id="@+id/lastdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="last date" />
+            </LinearLayout>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

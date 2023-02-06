@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="Login Via your Moobile number to start hacking skill."
+            android:text="Login via your Mobile number to start hacking skills."
             android:gravity="center"
             android:fontFamily="@font/baloo_bhaijaan"
             android:textSize="15sp"
@@ -69,7 +69,6 @@
                 android:id="@+id/input_Mob_Num"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-
                 android:background="@null"
                 android:hint="@string/mobile_number"
                 android:fontFamily="@font/baloo_bhaijaan"
@@ -90,8 +89,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="70dp"
             android:text="get OTP"
+            android:clickable="true"
             android:textColor="@color/base"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/button_state"
             android:textStyle="bold"
             />
 
@@ -112,13 +112,14 @@
         <Button
 
             android:id="@+id/btnverified"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="70dp"
             android:text="verify"
             android:textColor="@color/base"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/button_state"
             android:textStyle="bold"
             />
 

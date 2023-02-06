@@ -6,10 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
+class problemListAdapter(private val list :ArrayList<questions>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
 
     class problemListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val probView:TextView=itemView.findViewById(R.id.prob)
+        val shortdisc:TextView=itemView.findViewById(R.id.short_disc)
+        val fulldisc:TextView=itemView.findViewById(R.id.full_disc)
+        val skill:TextView=itemView.findViewById(R.id.skill)
+        val reward:TextView=itemView.findViewById(R.id.reward)
+        val lastdate:TextView=itemView.findViewById(R.id.lastdate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): problemListViewHolder {
@@ -20,8 +24,6 @@ class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemLi
 //            view.accessibilityDelegate= Accessibility
 
         val viewHolder =problemListViewHolder(view)
-
-
         return viewHolder
     }
 
@@ -30,8 +32,11 @@ class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemLi
     }
 
     override fun onBindViewHolder(holder: problemListViewHolder, position: Int) {
-        val currProb=list[position]
-        holder.probView.text=currProb
+        holder.shortdisc.text=list[position].shortDiscriptionQuestion
+        holder.reward.text=list[position].rewardAmt
+        holder.lastdate.text=list[position].lastDate
+        holder.skill.text=list[position].skill
+        holder.fulldisc.text=list[position].fullQuestion
         //onclicklistener
     }
 

@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         logo.animate().setDuration(3000).alpha(1f)
         typerfunc()
         head.animate().setDuration(3001).alpha(1f).withEndAction {
-            val i = Intent(this, Login::class.java)
+            val i = Intent(this, Problem_List::class.java)
 
             startActivity(i)
 
