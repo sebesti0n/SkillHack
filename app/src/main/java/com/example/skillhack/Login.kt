@@ -7,8 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.skillhack.databinding.ActivityMainBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
@@ -24,6 +26,8 @@ class Login : AppCompatActivity() {
     private lateinit var getverifybtn:Button
     private lateinit var getotp:Button
     private lateinit var verifiedId:String
+    private lateinit var adminLogin:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -32,6 +36,13 @@ class Login : AppCompatActivity() {
         edtotp=findViewById(R.id.input_otp)
         getverifybtn=findViewById(R.id.btnverified)
         getotp=findViewById(R.id.btnGetOtp)
+        adminLogin=findViewById(R.id.tv_adminLogin)
+
+        adminLogin.setOnClickListener {
+            val i=Intent(this,admin_problem_update::class.java)
+            startActivity(i)
+            finish()
+        }
 
         getotp.setOnClickListener(View.OnClickListener {
             if (mobno.text.trim().toString().isEmpty()){

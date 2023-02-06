@@ -18,10 +18,11 @@
             android:id="@+id/logo"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/main_logo" />
+            android:src="@drawable/main_logo"
+            android:contentDescription="@string/logo"/>
 
     </LinearLayout>
 
@@ -32,48 +33,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:textSize="40sp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/baloo_bhaijaan"
-            android:text="Welcome admin!!"/>
+            android:text="@string/welcome_admin"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/baloo_bhaijaan"
-            android:text="Update a Challenge for Users"/>
+            android:text="@string/update_a_challenge_for_users"/>
 
         <EditText
-            android:id="@+id/short_discription"
+            android:id="@+id/sd_problem"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/otp_box"
             android:ems="10"
-            android:hint="Enter question desciption in one  line"
+            android:hint="@string/enter_question_desciption_in_one_line"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
-            android:textColorHint="#B29B88" />
+            android:textColorHint="#B29B88"
+            />
 
         <EditText
-            android:id="@+id/required_skill"
+            android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/otp_box"
             android:ems="10"
             android:gravity="start|top"
-            android:hint="Enter detailed discription of question"
+            android:hint="@string/enter_detailed_discription_of_question"
             android:inputType="textMultiLine"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:textColorHint="#B29B88" />
@@ -81,15 +83,15 @@
         <EditText
             android:id="@+id/skills_required"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/otp_box"
             android:ems="10"
-            android:hint="Skill required"
+            android:hint="@string/skill_required"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:textColorHint="@color/hint_color" />
@@ -97,15 +99,15 @@
         <EditText
             android:id="@+id/reward_amount"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/otp_box"
             android:ems="10"
-            android:hint="Reward Amount"
+            android:hint="@string/reward_amount"
             android:inputType="number"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:textColorHint="#B29B88" />
@@ -113,15 +115,15 @@
         <EditText
             android:id="@+id/review_date"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/otp_box"
             android:ems="10"
-            android:hint="Enter last date of submission"
+            android:hint="@string/enter_last_date_of_submission"
             android:inputType="date"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:textColorHint="#B29B88" />
@@ -136,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="90dp"
             android:layout_marginLeft="90dp"
-            android:text="Submit" />
+            android:text="@string/submit" />
 
 
     </LinearLayout>
