@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+
         android:fontFamily="@font/baloo_bhaijaan"
         android:gravity="bottom"
         android:shadowColor="@color/white"

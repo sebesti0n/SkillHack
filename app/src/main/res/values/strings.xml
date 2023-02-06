@@ -8,4 +8,13 @@
     <string name="verify">Verify</string>
     <string name="_0">0</string>
     <string name="mobile_number">Mobile Number</string>
+    <string name="submit">Submit</string>
+    <string name="enter_last_date_of_submission">Enter last date of submission</string>
+    <string name="reward_amount">Reward Amount</string>
+    <string name="skill_required">Skill required</string>
+    <string name="enter_detailed_discription_of_question">Enter detailed discription of question</string>
+    <string name="enter_question_desciption_in_one_line">Enter question desciption in one line</string>
+    <string name="update_a_challenge_for_users">Update a Challenge for Users</string>
+    <string name="welcome_admin">Welcome admin!!</string>
+    <string name="logo">Logo</string>
 </resources>
