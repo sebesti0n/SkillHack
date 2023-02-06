@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_light"
-    tools:context=".VerificationOTP">
+    tools:context=".Admin.AdminLoginPage">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +20,7 @@
             >
 
             <ImageView
-                android:id="@+id/logo"
+                android:id="@+id/logoad"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Login/Signup"
+            android:text="Admin Login"
             android:fontFamily="@font/baloo_bhaijaan"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="Login Via your Mobile number to start hacking skill."
+            android:text="Login Via your Mobile number."
             android:gravity="center"
             android:fontFamily="@font/baloo_bhaijaan"
             android:textSize="15sp"
@@ -66,7 +66,7 @@
                 android:textStyle="bold"
                 />
             <EditText
-                android:id="@+id/input_Mob_Num"
+                android:id="@+id/admin_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
 
@@ -85,7 +85,7 @@
 
         <Button
 
-            android:id="@+id/btnGetOtp"
+            android:id="@+id/btnAdmOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -96,25 +96,17 @@
             android:visibility="visible"
             android:textStyle="bold"
             />
-        <TextView
-            android:id="@+id/tv_adminLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="5dp"
-            android:text="Admin login"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+
 
         <EditText
-            android:id="@+id/input_otp"
+            android:id="@+id/input_pin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/otp_box"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="60dp"
             android:hint="Enter otp here"
-            android:maxLength="6"
+            android:maxLength="4"
             android:fontFamily="@font/baloo_bhaijaan"
             android:gravity="center"
             android:visibility="invisible"
@@ -124,7 +116,7 @@
 
         <Button
 
-            android:id="@+id/btnverified"
+            android:id="@+id/adminVerify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

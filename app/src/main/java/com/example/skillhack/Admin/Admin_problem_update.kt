@@ -1,10 +1,12 @@
-package com.example.skillhack
+package com.example.skillhack.Admin
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.skillhack.R
+import com.example.skillhack.problemStructure
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.CollectionReference
@@ -21,7 +23,7 @@ class admin_problem_update : AppCompatActivity() {
     private lateinit var sendbtn:Button
     private lateinit var fdata: FirebaseFirestore
     private lateinit var fdataRef: CollectionReference
-    private lateinit var data:problemStructure
+    private lateinit var data: problemStructure
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_problem_update)
@@ -50,10 +52,7 @@ class admin_problem_update : AppCompatActivity() {
             }
 
         })
-
-
     }
-
     private fun addDatatoFirebase(shortQuestion: String, fullQuestion: String, skills: String, rwdAmt: String, date: String) {
 
 

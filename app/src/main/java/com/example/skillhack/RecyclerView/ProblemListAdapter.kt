@@ -1,10 +1,11 @@
-package com.example.skillhack
+package com.example.skillhack.RecyclerView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.skillhack.R
 
 class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
 
@@ -19,7 +20,7 @@ class problemListAdapter(val list: List<String>): RecyclerView.Adapter<problemLi
 
 //            view.accessibilityDelegate= Accessibility
 
-        val viewHolder =problemListViewHolder(view)
+        val viewHolder = problemListViewHolder(view)
 
 
         return viewHolder

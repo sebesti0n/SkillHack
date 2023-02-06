@@ -34,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         typerfunc()
         head.animate().setDuration(3001).alpha(1f).withEndAction {
             val i = Intent(this, Login::class.java)
-
             startActivity(i)
-
             Log.d("TAG","starting Problem list")
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
