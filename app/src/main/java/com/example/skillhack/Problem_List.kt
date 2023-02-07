@@ -37,19 +37,18 @@ class Problem_List : AppCompatActivity(){
                     }
                 }
                 recyclerView.adapter = problemListAdapter(list)
-                problemListAdapter(list).onItemClick ={
-                    val i = Intent(this,question_popup::class.java)
-                    //i.putExtra("question",it)
-                    startActivity(i)
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                    finish()
-                }
-
             }
         }
             .addOnFailureListener{
                 Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
             }
+        problemListAdapter(list).onItemClick ={
+            val i = Intent(this,question_popup::class.java)
+            //i.putExtra("question",it)
+            startActivity(i)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
+        }
 
 
 

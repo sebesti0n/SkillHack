@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
 
 class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
 
-    var onItemClick: ((questions) ->Unit)? =null
+    var onItemClick: ((questions)->Unit)? =null
 
     class problemListViewHolder(itemView: View,list:ArrayList<questions>): RecyclerView.ViewHolder(itemView){
         val shortdisc:TextView=itemView.findViewById(R.id.short_disc)
