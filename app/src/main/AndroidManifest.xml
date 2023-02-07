@@ -26,7 +26,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecyclerView.Problem_List"
+            android:name=".Problem_List"
             android:exported="false" />
         <activity
             android:name=".checker"
