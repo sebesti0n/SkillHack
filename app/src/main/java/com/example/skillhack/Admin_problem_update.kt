@@ -1,11 +1,14 @@
 package com.example.skillhack.Admin
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.skillhack.Problem_List
 import com.example.skillhack.R
+import com.example.skillhack.admin_question_list
 import com.example.skillhack.problemStructure
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -50,6 +53,10 @@ class admin_problem_update : AppCompatActivity() {
             } else {
                 addDatatoFirebase(shortQuestion,fullQuestion,skills,rwdAmt,date)
             }
+            val i = Intent(this, admin_question_list::class.java)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(i)
+            finish()
 
         })
     }

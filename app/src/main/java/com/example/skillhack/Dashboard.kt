@@ -39,6 +39,7 @@ class Dashboard : AppCompatActivity() {
         Signout=findViewById(R.id.Logout)
         auth=FirebaseAuth.getInstance()
         Signout.setOnClickListener{
+            auth.signOut()
             val i = Intent(this,Login::class.java)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             //i.putExtra("question",it)
