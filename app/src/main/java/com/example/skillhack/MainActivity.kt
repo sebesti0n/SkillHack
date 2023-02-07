@@ -3,15 +3,14 @@ package com.example.skillhack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+
 import android.util.Log
-import android.view.View
-import android.view.Window
-import android.view.WindowInsetsController
+
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.google.firebase.auth.FirebaseAuth
 import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -33,11 +32,23 @@ class MainActivity : AppCompatActivity() {
         logo.animate().setDuration(3000).alpha(1f)
         typerfunc()
         head.animate().setDuration(3001).alpha(1f).withEndAction {
-            val i = Intent(this, Login::class.java)
-            startActivity(i)
-            Log.d("TAG","starting Problem list")
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            finish()
+            val auth:FirebaseAuth=FirebaseAuth.getInstance()
+            val curruser=auth.currentUser
+            Log.d("TAG","Current -user-> $curruser.toString()")
+
+            if(curruser!=null){
+                val i = Intent(this, Problem_List::class.java)
+                startActivity(i)
+                finish()
+
+            }
+            else {
+                val i = Intent(this, Login::class.java)
+                startActivity(i)
+                Log.d("TAG", "starting Problem list")
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                finish()
+            }
         }
 
     }

@@ -3,12 +3,14 @@ package com.example.skillhack
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.util.Calendar
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.skillhack.Problem_List
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
@@ -48,7 +50,7 @@ class Details : AppCompatActivity() {
             val arrayList = ArrayList<String>()
             if (name.isEmpty()&&dob.isEmpty()) {
 
-                Toast.makeText(this, "Please add all data correctly.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please add all data correctly.", Toast.LENGTH_SHORT).show()
             } else {
 
                 addDatatoDatabase(name, dob, mobNo, arrayList, 0)
@@ -80,6 +82,7 @@ class Details : AppCompatActivity() {
         })
 
     }
+
 
     private fun datepickered(){
         val calend=java.util.Calendar.getInstance()

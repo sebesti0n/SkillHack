@@ -24,7 +24,7 @@ import com.google.firebase.ktx.Firebase
 import java.util.concurrent.TimeUnit
 
 
-class Login : AppCompatActivity() {
+class Login : AppCompatActivity(){
     private lateinit var auth:FirebaseAuth
     private lateinit var mobno:EditText
     private lateinit var edtotp:EditText
@@ -137,16 +137,11 @@ class Login : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
                 if (task.isSuccessful) {
-                    val user = Firebase.auth.currentUser
-                    if (user != null) {
-                        val i = Intent(this, Problem_List::class.java)
-                        startActivity(i)
-                        finish()
-                    } else {val i = Intent(this, Details::class.java)
+                        val i = Intent(this, Details::class.java)
                         i.putExtra("phone Number", mobno.text.toString())
                         startActivity(i)
                         finish()
-                    }
+//                    }
                 } else {
                     Toast.makeText(
                         this@Login,
@@ -156,5 +151,33 @@ class Login : AppCompatActivity() {
                 }
             })
     }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        val curruser=auth.currentUser
+//        Log.d("TAG","Current -user-> $curruser.toString()")
+//
+//        if(curruser!=null){
+//            val i = Intent(this, Problem_List::class.java)
+//                        startActivity(i)
+//                        finish()
+//
+//        }
+//    }
+
+//    override fun onAuthStateChanged(p0: FirebaseAuth) {
+//        if (auth.getCurrentUser() == null) {
+//            startLoginActivity();
+//            return;
+//        }
+//    }
+//
+//    private fun startLoginActivity() {
+//        val i = Intent(this, Details::class.java)
+//        i.putExtra("phone Number", mobno.text.toString())
+//        startActivity(i)
+//        finish()
+//    }
 
 }
+
