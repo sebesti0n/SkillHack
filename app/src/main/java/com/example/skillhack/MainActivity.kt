@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             val auth:FirebaseAuth=FirebaseAuth.getInstance()
             val curruser=auth.currentUser
             Log.d("TAG","Current -user-> $curruser.toString()")
-            val i = Intent(this, Problem_List::class.java)
+            val i = Intent(this, skill::class.java)
             startActivity(i)
             finish()
 

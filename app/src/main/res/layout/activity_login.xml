@@ -9,6 +9,7 @@
     tools:context=".VerificationOTP">
     <LinearLayout
         android:layout_width="match_parent"
+        android:backgroundTint="#F3F0E3"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -50,6 +51,7 @@
             />
         <LinearLayout
             android:layout_width="match_parent"
+            android:backgroundTint="#F3F0E3"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="60dp"

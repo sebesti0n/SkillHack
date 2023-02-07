@@ -17,6 +17,13 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".skill"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".question_popup"
             android:exported="false">
             <meta-data
@@ -31,7 +38,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin_problem_update"
+            android:name=".Admin.admin_problem_update"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
