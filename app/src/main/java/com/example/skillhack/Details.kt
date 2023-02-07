@@ -1,18 +1,21 @@
 package com.example.skillhack
+
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.util.Calendar
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class Details : AppCompatActivity() {
     private lateinit var uname:EditText
@@ -37,7 +40,8 @@ class Details : AppCompatActivity() {
         auth=FirebaseAuth.getInstance()
 
 
-        val mobNo:String=intent.getStringExtra("phone Number").toString()
+        val mobNo:String= intent.getStringExtra("phone Number").toString()
+
 
 
 
@@ -78,6 +82,23 @@ class Details : AppCompatActivity() {
         }.addOnFailureListener(OnFailureListener {
             Log.d("TAG", "On Failure$it")
         })
+
+//        val map: MutableMap<String, Any> = HashMap()
+//        map["Name"] =name
+//        map["DOB"]=dob
+//        map["MobNo"]=mobNo
+////        map["Skills"]=arrayList
+//        map["Reward Amount"]=i
+//        val fRef: DocumentReference =fstore.collection("users").document("25")
+////
+//        fRef.set(map).addOnSuccessListener {
+//
+//        }.addOnFailureListener(OnFailureListener {
+//            Log.d("TAG", "On Failure$it")
+//        })
+
+//        val dbRefLicenseDoc = FirebaseDatabase.getInstance().reference
+//        dbRefLicenseDoc.child(FirebaseAuth.getInstance().uid!!).updateChildren(map)
 
     }
 

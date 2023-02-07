@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.getAttributionTag
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.withContext
 
 class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
+
 
     var onItemClick: ((questions)->Unit)? =null
 
@@ -23,6 +25,7 @@ class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<p
         val skill:TextView=itemView.findViewById(R.id.skill)
         val reward:TextView=itemView.findViewById(R.id.reward)
         val lastdate:TextView=itemView.findViewById(R.id.lastdate)
+        val cv:CardView=itemView.findViewById(R.id.cardview)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): problemListViewHolder {
@@ -48,10 +51,10 @@ class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<p
         holder.fulldisc.text=list[position].fullQuestion
         //onclicklistener
         val ques= list[position]
-        holder.itemView.setOnClickListener{
-            Log.d("TAG","pressed")
-            onItemClick?.invoke(ques)
-        }
+//        holder.cv.setOnClickListener{
+//            Log.d("TAG","pressed")
+//            onItemClick?.invoke(ques)
+//        }
     }
 
 

@@ -64,16 +64,17 @@ android:background="@drawable/background_light">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         >
 
         <EditText
             android:id="@+id/dob"
             android:layout_width="275dp"
-            android:layout_height="48dp"
+            android:layout_height="38dp"
             android:layout_gravity="bottom"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/box"
             android:ems="12"
 
@@ -82,7 +83,7 @@ android:background="@drawable/background_light">
             android:inputType="textPersonName"
             android:padding="8dp" />
 
-   <ImageView
+        <ImageView
        android:id="@+id/calender"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"

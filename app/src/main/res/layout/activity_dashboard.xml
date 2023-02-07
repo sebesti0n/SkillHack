@@ -35,6 +35,7 @@
             android:layout_marginTop="50dp"
             android:src="@drawable/dasboardperson" />
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of User"
@@ -42,6 +43,7 @@
             android:textSize="20sp"
             />
         <TextView
+            android:id="@+id/MobUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mobile Number of User"

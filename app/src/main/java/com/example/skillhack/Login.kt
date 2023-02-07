@@ -18,6 +18,9 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -30,10 +33,9 @@ class Login : AppCompatActivity(){
     private lateinit var edtotp:EditText
     private lateinit var getverifybtn:Button
     private lateinit var getotp:Button
-    private lateinit var verifiedId:String
+    private var verifiedId:String?=null
     private lateinit var adminLogin:TextView
-//    private lateinit var fstore:FirebaseFirestore
-//    private lateinit var userID:String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +85,7 @@ class Login : AppCompatActivity(){
 
     }
     private fun verifycode(code: String) {
-        val credential = PhoneAuthProvider.getCredential(verifiedId, code)
+        val credential = PhoneAuthProvider.getCredential(verifiedId!!,code)
         signInWithPhoneAuthCredential(credential)
     }
 
@@ -102,9 +104,11 @@ class Login : AppCompatActivity(){
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
-        ){
+        ){   verifiedId=verificationId
+            Log.d("TAG","code$verificationId")
             super.onCodeSent(verificationId,token)
-            verifiedId = verificationId
+
+
         }
 
 
@@ -137,6 +141,21 @@ class Login : AppCompatActivity(){
         auth.signInWithCredential(credential)
             .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
                 if (task.isSuccessful) {
+
+//                  userRef  = FirebaseDatabase.getInstance().getReference("users")
+//                    userRef.orderByChild("mobNum").equalTo( mobno.text.toString()).addListenerForSingleValueEvent( ValueEventListener() {
+//
+//                        if (dataSnapshot.getValue() != null){
+//                            //it means user already registered
+//                            //Add code to show your prompt
+//                            showPrompt();
+//                        }else{
+//                            //It is new users
+//                            //write an entry to your user table
+//                            //writeUserEntryToDB();
+//                        }
+//                    }
+
                         val i = Intent(this, Details::class.java)
                         i.putExtra("phone Number", mobno.text.toString())
                         startActivity(i)
@@ -151,33 +170,5 @@ class Login : AppCompatActivity(){
                 }
             })
     }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        val curruser=auth.currentUser
-//        Log.d("TAG","Current -user-> $curruser.toString()")
-//
-//        if(curruser!=null){
-//            val i = Intent(this, Problem_List::class.java)
-//                        startActivity(i)
-//                        finish()
-//
-//        }
-//    }
-
-//    override fun onAuthStateChanged(p0: FirebaseAuth) {
-//        if (auth.getCurrentUser() == null) {
-//            startLoginActivity();
-//            return;
-//        }
-//    }
-//
-//    private fun startLoginActivity() {
-//        val i = Intent(this, Details::class.java)
-//        i.putExtra("phone Number", mobno.text.toString())
-//        startActivity(i)
-//        finish()
-//    }
-
 }
 

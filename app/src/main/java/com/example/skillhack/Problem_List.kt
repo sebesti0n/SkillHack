@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -17,6 +18,7 @@ class Problem_List : AppCompatActivity(){
     private lateinit var recyclerView: RecyclerView
     private lateinit var list: ArrayList<questions>
     private var db= Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_problem_list)
@@ -28,7 +30,9 @@ class Problem_List : AppCompatActivity(){
 
         list= arrayListOf()
         db = FirebaseFirestore.getInstance()
-        db.collection("problemStructure").get().addOnSuccessListener {
+
+        db.collection("problemStructure")
+            .get().addOnSuccessListener {
             if(!it.isEmpty){
                 for(data in it.documents) {
                     val ques: questions? = data.toObject(questions::class.java)
@@ -53,6 +57,7 @@ class Problem_List : AppCompatActivity(){
 
 
     }
+
 
 
 }
