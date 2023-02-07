@@ -16,8 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
-    <activity android:name=".Admin.AdminLoginPage"
-        android:exported="false"/>
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminLoginPage"
+            android:exported="false" />
         <activity
             android:name=".Admin.admin_problem_update"
             android:exported="false">

@@ -66,25 +66,30 @@ android:background="@drawable/background_light">
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-    <EditText
-        android:id="@+id/dob"
-        android:layout_width="match_parent"
-        android:padding="8dp"
-        android:fontFamily="@font/baloo_bhaijaan"
-        android:layout_height="48dp"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/box"
-        android:ems="12"
-        android:hint="Enter your Date of Birth"
-        android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/dob"
+            android:layout_width="275dp"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/box"
+            android:ems="12"
+
+            android:fontFamily="@font/baloo_bhaijaan"
+            android:hint="Enter your Date of Birth"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
 
    <ImageView
+       android:id="@+id/calender"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:srcCompat="@drawable/ic_baseline_calendar_month_24"
+       android:layout_marginTop="0dp"
+       android:layout_marginStart="2dp"
+
        />
 
     </LinearLayout>
