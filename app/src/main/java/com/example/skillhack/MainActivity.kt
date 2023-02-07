@@ -35,20 +35,23 @@ class MainActivity : AppCompatActivity() {
             val auth:FirebaseAuth=FirebaseAuth.getInstance()
             val curruser=auth.currentUser
             Log.d("TAG","Current -user-> $curruser.toString()")
+            val i = Intent(this, Problem_List::class.java)
+            startActivity(i)
+            finish()
 
-            if(curruser!=null){
-                val i = Intent(this, Problem_List::class.java)
-                startActivity(i)
-                finish()
-
-            }
-            else {
-                val i = Intent(this, Login::class.java)
-                startActivity(i)
-                Log.d("TAG", "starting Problem list")
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                finish()
-            }
+//            if(curruser!=null){
+//                val i = Intent(this, Problem_List::class.java)
+//                startActivity(i)
+//                finish()
+//
+//            }
+//            else {
+//                val i = Intent(this, Login::class.java)
+//                startActivity(i)
+//                Log.d("TAG", "starting Problem list")
+//                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+//                finish()
+//            }
         }
 
     }
