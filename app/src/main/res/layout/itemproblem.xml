@@ -2,17 +2,19 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:androd="http://schemas.android.com/tools"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="10dp"
     android:layout_margin="5dp"
+    android:elevation="50dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
         android:orientation="vertical"
-        android:background="@drawable/otp_box">
+        >
 
         <TextView
             android:id="@+id/short_disc"
