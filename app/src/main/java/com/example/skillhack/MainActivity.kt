@@ -34,13 +34,14 @@ class MainActivity : AppCompatActivity() {
         head.animate().setDuration(3001).alpha(1f).withEndAction {
             val auth:FirebaseAuth=FirebaseAuth.getInstance()
             val curruser=auth.currentUser
-            Log.d("TAG","Current -user-> $curruser.toString()")
-//            val i = Intent(this@MainActivity, Details::class.java)
+//            Log.d("TAG","Current -user-> $curruser.toString()")
+//            val i = Intent(this@MainActivity, Dashboard::class.java)
 //            startActivity(i)
 //            finish()
-//
+////
             if(curruser!=null){
                 val i = Intent(this, Problem_List::class.java)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 startActivity(i)
                 finish()
 

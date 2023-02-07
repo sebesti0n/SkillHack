@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,10 +18,12 @@ class Problem_List : AppCompatActivity(),Listener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var list: ArrayList<questions>
     private var db= Firebase.firestore
+    private lateinit var dashperson:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_problem_list)
         //Log.d("TAG"," Problem list Running")
+        dashperson=findViewById(R.id.dashboardIcon)
 
          recyclerView=findViewById<RecyclerView>(R.id.recylerview)
 
@@ -45,9 +49,19 @@ class Problem_List : AppCompatActivity(),Listener {
         val problemadapter=problemListAdapter(list,this)
         problemadapter.onItemClick ={
             val intent = Intent(this,question_popup::class.java)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             //i.putExtra("question",it)
             startActivity(intent)
         }
+        dashperson.setOnClickListener{
+            Log.d("TAG"," dash board opening")
+            val i = Intent(this,Dashboard::class.java)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            //i.putExtra("question",it)
+            startActivity(i)
+            finish()
+        }
+
 
 
 

@@ -138,6 +138,15 @@
             android:textStyle="bold"
             />
 
+        <ProgressBar
+            android:id="@+id/PbLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:outlineSpotShadowColor="@color/hint_color"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+
+            />
 
 
     </LinearLayout>

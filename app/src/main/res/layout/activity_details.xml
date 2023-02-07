@@ -70,7 +70,7 @@ android:background="@drawable/background_light">
 
         <EditText
             android:id="@+id/dob"
-            android:layout_width="275dp"
+            android:layout_width="270dp"
             android:layout_height="38dp"
             android:layout_gravity="bottom"
             android:layout_marginLeft="50dp"
@@ -116,5 +116,7 @@ android:background="@drawable/background_light">
         android:fontFamily="@font/baloo_bhaijaan"
         android:text="Continue" />
 
+
 </LinearLayout>
+
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.os.Parcelable
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -39,18 +40,38 @@ class question_popup : AppCompatActivity() {
             Log.d("TAG","entered in if")
             val short=findViewById<TextView>(R.id.one_line)
             val long=findViewById<TextView>(R.id.mul_line)
-            val datenrew=findViewById<TextView>(R.id.datenrew)
+            val date=findViewById<TextView>(R.id.datelast)
             val skil=findViewById<TextView>(R.id.skill)
-            skil.text=skill.toString()
+        val urldrive=findViewById<EditText>(R.id.edtUrl)
+        val rwd=findViewById<TextView>(R.id.rew)
+            skil.text="skill: $skill"
             short.text=small.toString()
             long.text=large.toString()
+           rwd.text="Reward: $reward"
+          date.text="Last Date: $lastdate"
             //datenrew.text="Result will be live by $question.lastDate. \nTop problem solver will win cash rewards of Rs. $question.rewardAmt"
             val startsolving=findViewById<Button>(R.id.startsolving)
 
-//            startsolving.setOnClickListener{
-//                setVisible(false)
-//            }
-    }
+
+            startsolving.setOnClickListener {
+                if (urldrive.text.trim().toString().isEmpty()){
+                Toast.makeText(this@question_popup,"Enter drive Link",Toast.LENGTH_LONG).show()
+            }
+                else {
+                    Toast.makeText(
+                        this@question_popup,
+                        "Submitted  Keep Solving!!",
+                        Toast.LENGTH_LONG
+                    )
+                        .show()
+                    val i = Intent(this, Problem_List::class.java)
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                    startActivity(i)
+                    finish()
+                }
+            }
+        }
+
 
 }
 

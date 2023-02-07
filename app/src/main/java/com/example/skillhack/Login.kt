@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import org.checkerframework.checker.units.qual.Length
 import java.util.concurrent.TimeUnit
 
 
@@ -35,6 +37,7 @@ class Login : AppCompatActivity(){
     private lateinit var getotp:Button
     private var verifiedId:String?=null
     private lateinit var adminLogin:TextView
+    private lateinit var pb:ProgressBar
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,7 @@ class Login : AppCompatActivity(){
         getverifybtn=findViewById(R.id.btnverified)
         getotp=findViewById(R.id.btnGetOtp)
         adminLogin=findViewById(R.id.tv_adminLogin)
+        pb=findViewById(R.id.PbLogin)
 
         adminLogin.setOnClickListener {
             val i=Intent(this, AdminLoginPage::class.java)
@@ -85,11 +89,13 @@ class Login : AppCompatActivity(){
 
     }
     private fun verifycode(code: String) {
+        pb.visibility=View.VISIBLE
         val credential = PhoneAuthProvider.getCredential(verifiedId!!,code)
         signInWithPhoneAuthCredential(credential)
     }
 
     private fun sendVerificationCode(phone: String) {
+        pb.visibility=View.VISIBLE
 
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(phone) // Phone number to verify
@@ -104,7 +110,9 @@ class Login : AppCompatActivity(){
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
-        ){   verifiedId=verificationId
+        ){
+            pb.visibility=View.INVISIBLE
+            verifiedId=verificationId
             Log.d("TAG","code$verificationId")
             super.onCodeSent(verificationId,token)
 
@@ -113,7 +121,7 @@ class Login : AppCompatActivity(){
 
 
         override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
-
+            pb.visibility=View.INVISIBLE
             val code = phoneAuthCredential.smsCode
 
 
@@ -125,10 +133,13 @@ class Login : AppCompatActivity(){
 
 
         override fun onVerificationFailed(e: FirebaseException) {
+            pb.visibility=View.INVISIBLE
             if (e is FirebaseAuthInvalidCredentialsException) {
+                Toast.makeText(this@Login,"onVerificationFailed ",Toast.LENGTH_LONG).show()
                 Log.d("TAG","onVerificationFailed :${e.toString()}")
 
             } else if (e is FirebaseTooManyRequestsException) {
+                Toast.makeText(this@Login,"Too Many Requests Exception",Toast.LENGTH_LONG).show()
                 Log.d("TAG","onVerificationFailed :${e.toString()}")
             }
         }
@@ -155,13 +166,15 @@ class Login : AppCompatActivity(){
 //                            //writeUserEntryToDB();
 //                        }
 //                    }
-
+                    pb.visibility=View.INVISIBLE
                         val i = Intent(this, Details::class.java)
                         i.putExtra("phone Number", mobno.text.toString())
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                         startActivity(i)
                         finish()
 //                    }
                 } else {
+                    pb.visibility=View.INVISIBLE
                     Toast.makeText(
                         this@Login,
                         task.exception.toString(),

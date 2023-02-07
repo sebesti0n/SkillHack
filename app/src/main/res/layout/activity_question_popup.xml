@@ -5,63 +5,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     android:background="@drawable/background_light"
     tools:context=".question_popup">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/heading_backscreen">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/main_logo" />
+
+    </LinearLayout>
 
 
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:id="@+id/back_btn"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:src="@drawable/ic_baseline_close_24"
-                android:clickable="true"
-                />
+<!--    <ImageView-->
+<!--        android:id="@+id/back_btn"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_baseline_close_24" />-->
             <TextView
                 android:layout_marginTop="20dp"
                 android:id="@+id/one_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="One line discription of question"
+                android:textStyle="bold"
                 android:textSize="20sp"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
+
                 android:orientation="vertical"
                 android:layout_gravity="center">
                 <TextView
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
                     android:id="@+id/mul_line"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Detailed discripion of the problem"
-                    android:textSize="10sp"
+                    android:textSize="15sp"
                     />
 
                 <TextView
-                    android:id="@+id/datenrew"
+                android:id="@+id/skill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:gravity="bottom"
+                android:text="skill" />
+                <TextView
+                    android:id="@+id/rew"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="bottom"
-                    android:text="date and rewards" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:text="rewards" />
 
                 <TextView
-                    android:id="@+id/skill"
+                    android:id="@+id/datelast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="bottom"
-                    android:text="skill" />
+                    android:text="date" />
 
             </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:elevation="10dp">
+            android:elevation="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:text="Enter drive Link of answer"
+                />
+
+            <EditText
+                android:id="@+id/edtUrl"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+
+                android:background="@drawable/box"
+                android:hint="  Drive Link Here(Public Link)" />
 
         </LinearLayout>
 
@@ -72,6 +122,6 @@
                 android:textSize="10dp"
                 android:layout_marginHorizontal="130dp"
                 android:background="@drawable/button_state"
-                android:text="Start Solving"/>
+                android:text="Submit"/>
 
 </LinearLayout>

@@ -56,7 +56,7 @@ class Details : AppCompatActivity() {
             } else {
 
                 addDatatoDatabase(name, dob, mobNo, arrayList, 0)
-                val i = Intent(this, Problem_List::class.java)
+                val i = Intent(this, skill::class.java)
                 startActivity(i)
                 Log.d("TAG", "starting Problem list")
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -67,35 +67,35 @@ class Details : AppCompatActivity() {
 
     private fun addDatatoDatabase(name: String, dob: String, mobNo: String, arrayList: ArrayList<String>, i: Int) {
         userID= auth.currentUser!!.uid
-        udata=UserDetails()
-        udata.setTotalReward(i)
-        udata.setdob(dob)
-        udata.setname(name)
-        udata.setmobNum(mobNo)
-        udata.setskills(arrayList)
-        Log.d("TAG", uname.text.toString())
-        Log.d("TAG", udob.text.toString())
-        val fRef: DocumentReference =fstore.collection("users").document(userID)
-
-        fRef.set(udata).addOnSuccessListener {
-
-        }.addOnFailureListener(OnFailureListener {
-            Log.d("TAG", "On Failure$it")
-        })
-
-//        val map: MutableMap<String, Any> = HashMap()
-//        map["Name"] =name
-//        map["DOB"]=dob
-//        map["MobNo"]=mobNo
-////        map["Skills"]=arrayList
-//        map["Reward Amount"]=i
-//        val fRef: DocumentReference =fstore.collection("users").document("25")
-////
-//        fRef.set(map).addOnSuccessListener {
+//        udata=UserDetails()
+//        udata.setTotalReward(i)
+//        udata.setdob(dob)
+//        udata.setname(name)
+//        udata.setmobNum(mobNo)
+//        udata.setskills(arrayList)
+//        Log.d("TAG", uname.text.toString())
+//        Log.d("TAG", udob.text.toString())
+//        val fRef: DocumentReference =fstore.collection("users").document(userID)
+//
+//        fRef.set(udata).addOnSuccessListener {
 //
 //        }.addOnFailureListener(OnFailureListener {
 //            Log.d("TAG", "On Failure$it")
 //        })
+
+        val map: MutableMap<String, Any> = HashMap()
+        map["Name"] =name
+        map["DOB"]=dob
+        map["MobNo"]=mobNo
+        map["Skills"]=arrayList
+        map["Reward Amount"]=i
+        val fRef: DocumentReference =fstore.collection("users").document(userID)
+//
+        fRef.set(map).addOnSuccessListener {
+
+        }.addOnFailureListener(OnFailureListener {
+            Log.d("TAG", "On Failure$it")
+        })
 
 //        val dbRefLicenseDoc = FirebaseDatabase.getInstance().reference
 //        dbRefLicenseDoc.child(FirebaseAuth.getInstance().uid!!).updateChildren(map)

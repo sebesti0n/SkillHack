@@ -20,6 +20,8 @@
             android:exported="false">
 
         </activity>
+        <activity android:name=".Dashboard"
+            android:exported="false"/>
         <activity
             android:name=".skill"
             android:exported="false">

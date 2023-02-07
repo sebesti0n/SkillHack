@@ -133,7 +133,7 @@
 
         />
     <View
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="1dp"
         android:background="@color/linkColor"
         android:layout_marginStart="30dp"
@@ -149,7 +149,7 @@
 
         />
     <View
-        android:layout_width="124dp"
+        android:layout_width="102dp"
         android:layout_height="1dp"
         android:background="@color/linkColor"
         android:layout_marginStart="30dp"
@@ -165,11 +165,13 @@
 
         />
     <View
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:layout_height="1dp"
         android:background="@color/linkColor"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="20dp"/>
+
+
 
 
 </LinearLayout>

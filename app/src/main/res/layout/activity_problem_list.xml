@@ -24,6 +24,17 @@
             android:layout_height="50dp"
             android:src="@drawable/main_logo" />
 
+        <ImageView
+            android:id="@+id/dashboardIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/dasboardperson"
+            android:background="@drawable/circle"/>
+
     </LinearLayout>
 
     <TextView
