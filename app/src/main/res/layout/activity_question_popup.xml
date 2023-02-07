@@ -1,52 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_light"
     tools:context=".question_popup">
 
-    <androidx.cardview.widget.CardView
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/otp_box"
-        app:cardCornerRadius="10dp"
-        >
-        <LinearLayout
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+
             <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="right"
                 android:src="@drawable/ic_baseline_close_24"
                 android:clickable="true"
                 />
             <TextView
+                android:layout_marginTop="20dp"
                 android:id="@+id/one_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="One line discription of question"
                 android:textSize="20sp"
                 />
-            <TextView
-                android:id="@+id/mul_line"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Detailed discripion of the problem"
-                android:textSize="10sp"
-                />
-            <TextView
-                android:id="@+id/datenrew"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="date and rewards"/>
+                android:layout_height="400dp"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/mul_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detailed discripion of the problem"
+                    android:textSize="10sp"
+                    />
+
+                <TextView
+                    android:id="@+id/datenrew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="date and rewards" />
+
+                <TextView
+                    android:id="@+id/skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="skill" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:elevation="10dp">
+
+        </LinearLayout>
+
             <Button
                 android:id="@+id/startsolving"
                 android:layout_width="match_parent"
@@ -55,7 +73,5 @@
                 android:layout_marginHorizontal="130dp"
                 android:background="@drawable/button_state"
                 android:text="Start Solving"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

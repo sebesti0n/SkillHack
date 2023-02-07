@@ -1,31 +1,33 @@
 package com.example.skillhack
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.getAttributionTag
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.withContext
 
-class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
-
+class problemListAdapter(val list:ArrayList<questions>, private val listener: Listener): RecyclerView.Adapter<problemListAdapter.problemListViewHolder>() {
 
     var onItemClick: ((questions)->Unit)? =null
 
-    class problemListViewHolder(itemView: View,list:ArrayList<questions>): RecyclerView.ViewHolder(itemView){
+    inner class problemListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val shortdisc:TextView=itemView.findViewById(R.id.short_disc)
         val fulldisc:TextView=itemView.findViewById(R.id.full_disc)
         val skill:TextView=itemView.findViewById(R.id.skill)
         val reward:TextView=itemView.findViewById(R.id.reward)
         val lastdate:TextView=itemView.findViewById(R.id.lastdate)
-        val cv:CardView=itemView.findViewById(R.id.cardview)
+
+        init{
+            itemView.setOnClickListener{
+                Log.d("TAG","click is working")
+                listener.onitemclicklistener(adapterPosition)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): problemListViewHolder {
@@ -35,7 +37,7 @@ class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<p
 
 //            view.accessibilityDelegate= Accessibility
 
-        val viewHolder =problemListViewHolder(view,list)
+        val viewHolder =problemListViewHolder(view)
         return viewHolder
     }
 
@@ -50,9 +52,9 @@ class problemListAdapter(val list :ArrayList<questions>): RecyclerView.Adapter<p
         holder.skill.text=list[position].skill
         holder.fulldisc.text=list[position].fullQuestion
         //onclicklistener
-        val ques= list[position]
-//        holder.cv.setOnClickListener{
-//            Log.d("TAG","pressed")
+//        val ques= list[position]
+//        holder.itemView.setOnClickListener{
+//           // Log.d("TAG","pressed")
 //            onItemClick?.invoke(ques)
 //        }
     }

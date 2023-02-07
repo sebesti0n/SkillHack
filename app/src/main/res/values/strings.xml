@@ -17,4 +17,6 @@
     <string name="update_a_challenge_for_users">Update a Challenge for Users</string>
     <string name="welcome_admin">Welcome admin!!</string>
     <string name="logo">Logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
